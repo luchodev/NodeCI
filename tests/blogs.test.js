@@ -62,7 +62,7 @@ describe('When logged in', async () => {
   });
 });
 
-describe.only('User is not logged in', async () => {
+describe('User is not logged in', async () => {
   const actions = [
     {
       method: 'get',
@@ -92,7 +92,7 @@ describe.only('User is not logged in', async () => {
     expect(result).toEqual({ error: 'You must log in!' });
   });
 
-  test.only('User cannot get a list of posts', async () => {
+  test('User cannot get a list of posts', async () => {
     const result = await page.get('api/blogs');
 
     expect(result).toEqual({ error: 'You must log in!' });
