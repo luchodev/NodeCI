@@ -16,12 +16,11 @@ describe('When logged in', async () => {
     await page.login();
     await page.click('a.btn-floating');
   });
-  // test('Can see blog create form', async () => {
-  //   await page.click('a.btn-floating');
+  test('Can see blog create form', async () => {
+    const label = await page.getContentsOf('form label');
 
-  //   const label = await page.getContentsOf('form label');
-  //   expect(label).toEqual('Blog Title');
-  // });
+    expect(label).toEqual('Blog Title');
+  });
 
   describe('And using valid inputs', async () => {
     beforeEach(async () => {
